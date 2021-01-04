@@ -90,6 +90,27 @@ MOV CX, 0FFFFH     ;delay
 MOV CX, 0FFFFH     ;delay
   MYLP: LOOP MYLP
 ;--------------
+;full mode anticlock wise
+MOV AL, 00000110B
+  OUT PORTA,AL
+;--------------------
+CALL DELAY ;DELAY 
+;--------------------
+  MOV AL, 00001100B
+  OUT PORTA,AL
+;--------------------
+CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00001001B
+  OUT PORTA,AL
+;--------------------
+ CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00000011B
+  OUT PORTA,AL
+;--------------------
+CALL DELAY ;DELAY 
+;-----------------
 JMP START   
 ;--------------------
 CODE ENDS
