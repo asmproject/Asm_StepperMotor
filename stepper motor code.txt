@@ -58,8 +58,6 @@ MOV CX, 0FFFFH     ;delay
 ;--------------------
 MOV CX, 0FFFFH     ;delay
   MYLP: LOOP MYLP  
-;--------------------
-JMP START   ;repeat forever
 ;-------------------
 ;full mode clock wise
 MOV AL, 000000011B
