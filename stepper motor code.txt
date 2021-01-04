@@ -61,7 +61,7 @@ MOV CX, 0FFFFH     ;delay
 ;--------------------
 JMP START   ;repeat forever
 ;-------------------
-FULL:               ;full mode clock wise
+;full mode clock wise
 MOV AL, 000000011B
   OUT PORTA,AL
 ;--------------------
@@ -90,8 +90,6 @@ MOV CX, 0FFFFH     ;delay
 MOV CX, 0FFFFH     ;delay
   MYLP: LOOP MYLP
 ;--------------
-JMP START   
-;--------------------
 ;Half mode anti clockwise 
 MOV AL, 00001001B      
   OUT PORTA,AL
