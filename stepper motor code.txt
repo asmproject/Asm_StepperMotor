@@ -1,0 +1,64 @@
+CODE SEGMENT
+ PORTA  EQU 00H    ;Address of Port A = 00H
+ CR EQU 06H    ;Address of Control register = 06H
+ORG 100H         ;starts code at address 100H
+  
+  MOV AL, 10000000B ; means I/O device operates in I/O operatio mode and ports A,B,C are used as outputs with mode0
+  OUT CR, AL        ;outputs(copies) value of AL 80H=1000000B  to I/O port CR 
+  
+ 
+START:               ;code start
+ ;Half mode clockwise 8steps each step is 45ْ
+  MOV AL, 00001000B  ;moves 08H to AL
+  OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 
+                      ;and the rest 3 coils set to 0
+;--------------------
+  MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP
+;--------------------
+  MOV AL, 00001100B
+  OUT PORTA,AL       ;outputs(copies) value of AL 0CH  to I/O port PORTA which means A,B coils (for example) is set to 1 
+                      ;and the rest 2 coils set to 0
+;--------------------
+ MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP
+;--------------------
+   MOV AL, 00000100B
+  OUT PORTA,AL
+;--------------------
+MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP
+;--------------------
+  MOV AL, 00000110B
+  OUT PORTA,AL
+;--------------------
+MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP  
+;--------------------
+ MOV AL, 00000010B
+  OUT PORTA,AL
+;--------------------
+MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP  
+;--------------------
+  MOV AL, 00000011B
+  OUT PORTA,AL
+;--------------------
+MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP 
+;--------------------
+  MOV AL, 00000001B
+  OUT PORTA,AL
+;--------------------
+MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP  
+;--------------------
+  MOV AL, 00001001B
+  OUT PORTA,AL
+;--------------------
+MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP  
+;--------------------
+JMP START   ;repeat forever
+CODE ENDS
+END
