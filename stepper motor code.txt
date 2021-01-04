@@ -59,10 +59,13 @@ MOV CX, 0FFFFH     ;delay
 MOV CX, 0FFFFH     ;delay
   MYLP: LOOP MYLP  
 ;--------------------
-;full mode clock wise
+JMP START   ;repeat forever
+;-------------------
+FULL:               ;full mode clock wise
 MOV AL, 000000011B
   OUT PORTA,AL
 ;--------------------
+  
 MOV CX, 0FFFFH     ;delay
   MYLP: LOOP MYLP
 ;--------------------
@@ -87,32 +90,49 @@ MOV CX, 0FFFFH     ;delay
 MOV CX, 0FFFFH     ;delay
   MYLP: LOOP MYLP
 ;--------------
-;full mode anticlock wise
-MOV AL, 00000110B
+JMP START   
+;--------------------
+;Half mode anti clockwise 
+MOV AL, 00001001B      
   OUT PORTA,AL
 ;--------------------
-MOV CX, 0FFFFH     ;delay
-  MYLP: LOOP MYLP
+ CALL DELAY ;DELAY    
+;--------------------
+  MOV AL, 00000001B
+  OUT PORTA,AL
+;--------------------
+ CALL DELAY ;DELAY    
+;--------------------
+  MOV AL, 00000011B
+  OUT PORTA,AL
+;--------------------
+CALL DELAY ;DELAY 
+;--------------------
+  MOV AL, 00000010B
+  OUT PORTA,AL
+;--------------------
+  CALL DELAY ;DELAY   
+;--------------------
+  MOV AL, 00000110B
+  OUT PORTA,AL
+;--------------------
+CALL DELAY ;DELAY    
+;--------------------
+   MOV AL, 00000100B
+  OUT PORTA,AL
+;--------------------
+CALL DELAY ;DELAY   
 ;--------------------
   MOV AL, 00001100B
   OUT PORTA,AL
 ;--------------------
-MOV CX, 0FFFFH     ;delay
-  MYLP: LOOP MYLP
-;--------------------    
-  MOV AL, 00001001B
+ CALL DELAY ;DELAY  
+;--------------------
+ MOV AL, 00001000B
   OUT PORTA,AL
 ;--------------------
  MOV CX, 0FFFFH     ;delay
-  MYLP: LOOP MYLP
-;--------------------    
-  MOV AL, 00000011B
-  OUT PORTA,AL
-;--------------------
-MOV CX, 0FFFFH     ;delay
-  MYLP: LOOP MYLP
-;-----------------
-JMP START   
+  MYLP: LOOP MYLP   
 ;--------------------
 CODE ENDS
 END
