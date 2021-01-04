@@ -1,14 +1,20 @@
 CODE SEGMENT
  PORTA  EQU 00H    ;Address of Port A = 00H
+ PORTb  EQU 00H    ;Address of Port A = 02H
  CR EQU 06H    ;Address of Control register = 06H
 ORG 100H         ;starts code at address 100H
   
-  MOV AL, 10000000B ; means I/O device operates in I/O operatio mode and ports A,B,C are used as outputs with mode0
+  MOV AL, 10000010B ; means I/O device operates in I/O operatio mode and ports A,B,C are used as outputs with mode0
   OUT CR, AL        ;outputs(copies) value of AL 80H=1000000B  to I/O port CR 
   
  
 START:               ;code start
- ;Half mode clockwise 8steps each step is 45ْ
+ IN AL, PORTB   ;Copies value of port B to AL (the value of the 8 bits of portB)
+ CMP AL,01H     ; compares Al with 000000001B (which is the value results from logicstate)
+ JE FULL 
+ JMP HALF
+ HALF:
+HALFCW          ;Half mode clockwise 8steps each step is 45ْ
   MOV AL, 00001000B  ;moves 08H to AL
   OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 
                       ;and the rest 3 coils set to 0
@@ -59,8 +65,9 @@ MOV CX, 0FFFFH     ;delay
 MOV CX, 0FFFFH     ;delay
   MYLP: LOOP MYLP  
 ;--------------------
+JMP START
 
-;Half mode anti clockwise 
+HALFACW           ;Half mode ANTI-clockwise 8steps each step is 45ْ 
 MOV AL, 00001001B      
   OUT PORTA,AL
 ;--------------------
@@ -108,7 +115,9 @@ MOV CX, 0FFFFH     ;delay
  MOV CX, 0FFFFH     ;delay
   MYLP: LOOP MYLP   
 ;--------------------
-;full mode clock wise
+JMP START
+FULL:
+FULLCW:         ;full mode clock wise
 MOV AL, 000000011B
   OUT PORTA,AL
 ;--------------------
@@ -137,7 +146,8 @@ MOV CX, 0FFFFH     ;delay
 MOV CX, 0FFFFH     ;delay
   MYLP: LOOP MYLP
 ;--------------
-;full mode anticlock wise
+JMP START
+FULLACW:            ;full mode anticlock wise
 MOV AL, 00000110B
   OUT PORTA,AL
 ;--------------------
