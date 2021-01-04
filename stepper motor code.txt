@@ -141,23 +141,27 @@ MOV CX, 0FFFFH     ;delay
 MOV AL, 00000110B
   OUT PORTA,AL
 ;--------------------
-CALL DELAY ;DELAY 
+MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP 
 ;--------------------
   MOV AL, 00001100B
   OUT PORTA,AL
 ;--------------------
-CALL DELAY ;DELAY 
+MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP 
 ;--------------------    
   MOV AL, 00001001B
   OUT PORTA,AL
 ;--------------------
- CALL DELAY ;DELAY 
+ MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP 
 ;--------------------    
   MOV AL, 00000011B
   OUT PORTA,AL
 ;--------------------
-CALL DELAY ;DELAY 
+MOV CX, 0FFFFH     ;delay
+  MYLP: LOOP MYLP 
 ;-----------------
-
+JMP START
 CODE ENDS
 END
