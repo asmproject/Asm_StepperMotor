@@ -1,6 +1,7 @@
 CODE SEGMENT
  PORTA  EQU 00H    ;Address of Port A = 00H
- PORTb  EQU 00H    ;Address of Port A = 02H
+ PORTB  EQU 02H    ;Address of Port A = 02H
+ PORTC  EQU 04H    ;Address of Port A = 04H
  CR EQU 06H    ;Address of Control register = 06H
 ORG 100H         ;starts code at address 100H
   
@@ -14,6 +15,10 @@ START:               ;code start
  JE FULL 
  JMP HALF
  HALF:
+ IN AL, PORTC   ;Copies value of port C to AL (the value of the 8 bits of portC)
+ CMP AL,01H     ; compares Al with 000000001B (which is the value results from logicstate)
+ JE HALFACW 
+ JMP HALFCW
 HALFCW          ;Half mode clockwise 8steps each step is 45ْ
   MOV AL, 00001000B  ;moves 08H to AL
   OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 
@@ -117,6 +122,10 @@ MOV CX, 0FFFFH     ;delay
 ;--------------------
 JMP START
 FULL:
+ IN AL, PORTC   ;Copies value of port C to AL (the value of the 8 bits of portC)
+ CMP AL,01H     ; compares Al with 000000001B (which is the value results from logicstate)
+ JE FULLACW 
+ JMP FULLCW
 FULLCW:         ;full mode clock wise
 MOV AL, 000000011B
   OUT PORTA,AL
