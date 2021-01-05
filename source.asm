@@ -63,7 +63,7 @@ CALL DELAY ;DELAY
 CALL DELAY ;DELAY  
 ;--------------------
 JMP HALFCW
-;Half mode anti clockwise 
+HALFACW            ;Half mode anti clockwise 
 MOV AL, 00001001B      
   OUT PORTA,AL
 ;--------------------
@@ -104,7 +104,29 @@ CALL DELAY ;DELAY
 ;--------------------
 CALL DELAY ;DELAY    
 ;--------------------
-;full mode anticlock wise
+FULL:  
+FULLCW:      ;full mode clock wise
+MOV AL, 000000011B
+  OUT PORTA,AL
+;--------------------
+CALL DELAY ;DELAY 
+;--------------------
+  MOV AL, 00001001B
+  OUT PORTA,AL
+;--------------------
+CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00001100B
+  OUT PORTA,AL
+;--------------------
+ CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00000110B
+  OUT PORTA,AL
+;--------------------
+CALL DELAY ;DELAY 
+JMP FULLCW
+FULLACW:           ;full mode anticlock wise
 MOV AL, 00000110B
   OUT PORTA,AL
 ;--------------------
@@ -125,7 +147,8 @@ CALL DELAY ;DELAY
 ;--------------------
 CALL DELAY ;DELAY 
 ;-----------------
-FULL:   ;full mode clock wise
+FULL:  
+FULLCW      ;full mode clock wise
 MOV AL, 000000011B
   OUT PORTA,AL
 ;--------------------
@@ -145,7 +168,7 @@ CALL DELAY ;DELAY
   OUT PORTA,AL
 ;--------------------
 CALL DELAY ;DELAY 
-JMP FULL
+JMP FULLACW
 ;--------
  DELAY PROC         ; DELAY PROCEDURE  
   MOV CX, 0FFFFH     ;uses counter CX with delay time 0ffffH
