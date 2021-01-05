@@ -69,8 +69,8 @@ CALL DELAY ;DELAY
 ;--------------------
 CALL DELAY ;DELAY  
 ;--------------------
-JMP HALFCW
-HALFACW            ;Half mode anti clockwise 
+JMP START
+HALFACW:           ;Half mode anti clockwise 
 MOV AL, 00001001B      
   OUT PORTA,AL
 ;--------------------
@@ -111,7 +111,11 @@ CALL DELAY ;DELAY
 ;--------------------
 CALL DELAY ;DELAY    
 ;--------------------
-FULL:  
+JMP START
+FULL:         ;full mode region
+ IN AL, PORTC    ;Copies value of port C to AL (the value of the 8 bits of portC)
+ CMP AL,01H      ;compares Al with 000000001B (which is the value results from logicstate)
+ JE FULLACW      ;if Al = 01H jumps to FULLACW(FULL ANTI-clockwise mode) else compelte the code(goes to FULLCW)
 FULLCW:      ;full mode clock wise
 MOV AL, 000000011B
   OUT PORTA,AL
@@ -132,8 +136,9 @@ CALL DELAY ;DELAY
   OUT PORTA,AL
 ;--------------------
 CALL DELAY ;DELAY 
-JMP FULLCW
-FULLACW:           ;full mode anticlock wise
+JMP START
+;--------
+FULLACW:     ;full mode anticlock wise
 MOV AL, 00000110B
   OUT PORTA,AL
 ;--------------------
@@ -154,32 +159,7 @@ CALL DELAY ;DELAY
 ;--------------------
 CALL DELAY ;DELAY 
 ;-----------------
-FULL:         ;full mode region
- IN AL, PORTC    ;Copies value of port C to AL (the value of the 8 bits of portC)
- CMP AL,01H      ;compares Al with 000000001B (which is the value results from logicstate)
- JE FULLACW      ;if Al = 01H jumps to FULLACW(FULL ANTI-clockwise mode) else compelte the code(goes to FULLCW)
-FULLCW      ;full mode clock wise
-MOV AL, 000000011B
-  OUT PORTA,AL
-;--------------------
-CALL DELAY ;DELAY 
-;--------------------
-  MOV AL, 00001001B
-  OUT PORTA,AL
-;--------------------
-CALL DELAY ;DELAY 
-;--------------------    
-  MOV AL, 00001100B
-  OUT PORTA,AL
-;--------------------
- CALL DELAY ;DELAY 
-;--------------------    
-  MOV AL, 00000110B
-  OUT PORTA,AL
-;--------------------
-CALL DELAY ;DELAY 
-JMP FULLACW
-;--------
+JMP START
  DELAY PROC         ; DELAY PROCEDURE  
   MOV CX, 0FFFFH     ;uses counter CX with delay time 0ffffH
   MYLP: LOOP MYLP    ;loops tell CX is zero
