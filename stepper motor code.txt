@@ -14,13 +14,16 @@ START:               ;code start
  MOV BL,AL
  CALL MODE      ;if Al = 01H jumps to Full(Full clockwise mode) else compelte the code(goes to HALFCW)
  HALF:
- IN AL, PORTC   ;Copies value of port C to AL (the value of the 8 bits of portC)
- CMP AL,01H     ; compares Al with 000000001B (which is the value results from logicstate)
- JE HALFACW 
- JMP HALFCW
-HALFCW          ;Half mode clockwise 8steps each step is 45ْ
-  MOV AL, 00001000B  ;moves 08H to AL
-  OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 
+ IN AL,PORTB
+ MOV CL,AL  ;cl=portB
+ MOV DL,1   ;DL=1
+ SHL DL,1  ;DL=00000010 to check direction
+ TEST CL,DL 
+ JNZ HALFACW   ;if cl=00000010 go to half anticlockwise
+ JMP HALFCW    ;if cl=00000000 go to half clockwise
+ HALFCW        ;Half mode clockwise 8steps each step is 45ْ
+ MOV AL, 00001000B  ;moves 08H to AL
+ OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 
                       ;and the rest 3 coils set to 0
 ;--------------------
   CALL DELAY     ;delay
