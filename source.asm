@@ -163,14 +163,7 @@ JMP START
   RET                ; retrun to the program
  DELAY ENDP
 ;--------------
-
-HALFACWP PROC
- IN AL, PORTC    ;Copies value of port C to AL (the value of the 8 bits of portC)
- CMP AL,01H      ;compares Al with 000000001B (which is the value results from logicstate)
- JE HALFACW
- RET
- HALFACWP ENDP
- ;---------------------
+ ;-------------
  FULLACWP PROC
  IN AL, PORTC    ;Copies value of port C to AL (the value of the 8 bits of portC)
  CMP AL,01H      ;compares Al with 000000001B (which is the value results from logicstate)
