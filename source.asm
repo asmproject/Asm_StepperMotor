@@ -21,6 +21,7 @@ ORG 100H         ;starts code at address 100H
 START:          ;THE MAIN CODE
 CALL FULLP       
 HALF:
+CALL HALFACWP      ;if Al = 01H jumps to HALFACW(HALF ANTI-clockwise mode) else compelte the code(goes to HALFCW)
  IN AL, PORTC    ;Copies value of port C to AL (the value of the 8 bits of portC)
  CMP AL,01H      ;compares Al with 000000001B (which is the value results from logicstate)
  JE HALFACW
