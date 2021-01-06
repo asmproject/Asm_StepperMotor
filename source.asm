@@ -179,6 +179,13 @@ HALFACWP PROC
  JE HALFACW
  RET
  HALFACWP ENDP
+ ;---------------------
+ FULLACWP PROC
+ IN AL, PORTC    ;Copies value of port C to AL (the value of the 8 bits of portC)
+ CMP AL,01H      ;compares Al with 000000001B (which is the value results from logicstate)
+ JE FULLACW      ;if Al = 01H jumps to FULLACW(FULL ANTI-clockwise mode) else compelte the code(goes to FULLCW)
+ RET
+ FULLACWP ENDP
     invoke ExitProcess,0
     main endp
 end main
