@@ -163,6 +163,7 @@ JMP START
   RET                ; retrun to the program
  DELAY ENDP
 ;--------------
+MODE PROC
 
  Direction PROC
     invoke ExitProcess,0
