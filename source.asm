@@ -22,9 +22,7 @@ START:          ;THE MAIN CODE
 CALL FULLP       
 HALF:
 CALL HALFACWP      ;if Al = 01H jumps to HALFACW(HALF ANTI-clockwise mode) else compelte the code(goes to HALFCW)
- IN AL, PORTC    ;Copies value of port C to AL (the value of the 8 bits of portC)
- CMP AL,01H      ;compares Al with 000000001B (which is the value results from logicstate)
- JE HALFACW
+
 HALFCW:    ;Half mode clockwise 8steps each step is 45ú
    MOV AL, 00001000B  ;moves 08H to AL
   OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 
