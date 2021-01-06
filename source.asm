@@ -111,9 +111,7 @@ CALL DELAY ;DELAY
 JMP START
 FULL:         ;full mode region
 CALL FULLACWP
- IN AL, PORTC    ;Copies value of port C to AL (the value of the 8 bits of portC)
- CMP AL,01H      ;compares Al with 000000001B (which is the value results from logicstate)
- JE FULLACW      ;if Al = 01H jumps to FULLACW(FULL ANTI-clockwise mode) else compelte the code(goes to FULLCW)
+ 
 FULLCW:      ;full mode clock wise
 MOV AL, 000000011B
   OUT PORTA,AL
