@@ -166,6 +166,7 @@ JMP START
 MODE1:
  MODE PROC
  IN AL, PORTB   ;Copies value of port B to AL (the value of the 8 bits of portB)
+ MOV BL,AL       ;new value of BL
  CMP AL,01H     ; compares Al with 000000001B (which is the value results from logicstate)
  JE FULL 
  JMP HALF
