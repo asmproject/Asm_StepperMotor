@@ -19,9 +19,11 @@ ORG 100H         ;starts code at address 100H
   
  
 START:          ;THE MAIN CODE
+IN AL,PORTB
+ MOV BL,AL
 CALL MODE      
 HALF:
-CALL DIRECTION      ;if Al = 01H jumps to HALFACW(HALF ANTI-clockwise mode) else compelte the code(goes to HALFCW)
+CALL Direction      ;if Al = 01H jumps to HALFACW(HALF ANTI-clockwise mode) else compelte the code(goes to HALFCW)
 
 HALFCW:    ;Half mode clockwise 8steps each step is 45ú
    MOV AL, 00001000B  ;moves 08H to AL
@@ -110,7 +112,7 @@ CALL DELAY ;DELAY
 ;--------------------
 JMP START
 FULL:         ;full mode region
-CALL DIRECTION
+CALL Direction
  
 FULLCW:      ;full mode clock wise
 MOV AL, 000000011B
