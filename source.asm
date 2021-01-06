@@ -163,7 +163,12 @@ JMP START
   RET                ; retrun to the program
  DELAY ENDP
 ;--------------
-MODE PROC
+ MODE PROC
+ IN AL, PORTB   ;Copies value of port B to AL (the value of the 8 bits of portB)
+ CMP AL,01H     ; compares Al with 000000001B (which is the value results from logicstate)
+ JE FULL 
+ JMP HALF
+ MODE ENDP
 
  Direction PROC
     invoke ExitProcess,0
