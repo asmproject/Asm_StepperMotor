@@ -187,8 +187,7 @@ DIRECTION1:
  JE HALFCW
  JMP FULLACW
  DIRECTION ENDP
-CODE ENDS
-END
+
     invoke ExitProcess,0
     main endp
 end main
