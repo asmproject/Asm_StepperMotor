@@ -160,12 +160,20 @@ CALL DELAY ;DELAY
 CALL DELAY ;DELAY 
 ;-----------------
 JMP START
+;---procedures---
  DELAY PROC         ; DELAY PROCEDURE  
   MOV CX, 0FFFFH     ;uses counter CX with delay time 0ffffH
   MYLP: LOOP MYLP    ;loops tell CX is zero
   RET                ; retrun to the program
-  DELAY ENDP
-
+ DELAY ENDP
+;--------------
+FULLP PROC
+ IN AL, PORTB   ;Copies value of port B to AL (the value of the 8 bits of portB)
+ CMP AL,01H     ; compares Al with 000000001B (which is the value results from logicstate)
+ JE FULL 
+ RET
+FULLP ENDP
+;-------------
     invoke ExitProcess,0
     main endp
 end main
