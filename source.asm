@@ -19,6 +19,8 @@ ORG 100H         ;starts code at address 100H
   
  
 START:          ;THE MAIN CODE
+IN AL, PORTC
+ MOV DL,AL
 IN AL,PORTB
  MOV BL,AL
 CALL MODE      
