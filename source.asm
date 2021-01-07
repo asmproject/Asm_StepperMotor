@@ -114,7 +114,13 @@ CALL DELAY ;DELAY
 ;--------------------
 JMP START
 FULL:         ;full mode region
-CALL Direction
+IN AL,PORTB
+MOV CL,AL     ;CL=PORTB=00000011
+ MOV DL,1     ;DL=1
+ SHL DL,1     ;DL=00000010
+ TEST CL,DL   
+ JNZ FULLACW  ;if cl=00000011 go to full anticlockwise
+ JMP FULLCW   ;if cl=00000001 go to full clockwise
  
 FULLCW:      ;full mode clock wise
 MOV AL, 000000011B
