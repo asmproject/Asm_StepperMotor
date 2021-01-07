@@ -19,10 +19,11 @@ ORG 100H         ;starts code at address 100H
   
  
 START:          ;THE MAIN CODE
+   MOV AH, 00H
  IN AL,PORTB
  MOV BL,AL
  MOV CL,AL
-CALL MODE      
+CALL MODE       ;if Al = 01H jumps to Full(Full clockwise mode) else compelte the code(goes to HALFCW)     
 HALF:
 IN AL,PORTB
 MOV CL,AL ;CL=portb
@@ -177,7 +178,7 @@ JMP START
 IN AL, PORTC
  CMP BL, AL
  JNE  MODE1
-  MOV AL, 0H;
+ 
   OUT PORTC, AL
   IN AL, PORTB
   MOV CX, Ax    ;uses counter CX with delay time 0ffffH
