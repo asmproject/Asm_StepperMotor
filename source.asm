@@ -14,7 +14,7 @@ INCLUDE Irvine32.inc
  CR EQU 06H    ;Address of Control register = 06H
 ORG 100H         ;starts code at address 100H
   
-  MOV AL, 10001011B ; means I/O device operates in I/O operatio mode and ports A,C are used as outputs and B as input with mode0
+  MOV AL, 10000011B ; means I/O device operates in I/O operatio mode and ports A,C are used as outputs and B as input with mode0
   OUT CR, AL    ;outputs(copies) value of AL 80H=1000000B  to I/O port CR 
   
  
