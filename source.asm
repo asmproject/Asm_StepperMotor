@@ -126,9 +126,9 @@ MOV CL,AL     ;CL=PORTB
  TEST CL,DL   
  JNZ FULLACW  ;if cl=00000011 go to full anticlockwise
  JMP FULLCW   ;if cl=00000001 go to full clockwise
- FULLCW:     ;FULL mode clockwise 4steps each step is 90ْ
  
-FULLCW:      ;full mode clock wise
+ FULLCW:     ;FULL mode clockwise 4steps each step is 90ْ
+
 MOV AL, 000000011B
   OUT PORTA,AL
 ;--------------------
