@@ -168,7 +168,6 @@ JMP START
  IN AL,PORTC
  CMP DL,AL
  JNE DIRECTION 1
- CALL PORTB_CHECK
   MOV CX, 0FFFFH     ;uses counter CX with delay time 0ffffH
   MYLP: LOOP MYLP    ;loops tell CX is zero
   RET                ; retrun to the program
@@ -177,10 +176,11 @@ JMP START
 MODE1:
  MODE PROC
  IN AL, PORTB   ;Copies value of port B to AL (the value of the 8 bits of portB)
- MOV BL,AL       ;new value of BL
- CMP AL,01H     ; compares Al with 000000001B (which is the value results from logicstate)
- JE FULL 
+ MOV BL,AL       ;new value of BL 
+ TEST BL,1
+ JNZ FULL 
  JMP HALF
+
  MODE ENDP
 ;-------------
 
