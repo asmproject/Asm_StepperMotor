@@ -25,10 +25,15 @@ IN AL,PORTB
  MOV BL,AL
 CALL MODE      
 HALF:
-CALL Direction      ;if Al = 01H jumps to HALFACW(HALF ANTI-clockwise mode) else compelte the code(goes to HALFCW)
-
+IN AL,PORTC
+MOV CL,AL ;CL=portb
+MOV DL,1  ;DL=1
+SHL DL,1  ;DL=00000010 to check direction
+TEST CL,DL 
+JNZ HALFACW ;if cl=00000010 go to half anticlockwise
+JMP HALFCW ;if cl=00000000 g0 to half clockwise
 HALFCW:    ;Half mode clockwise 8steps each step is 45ú
-   MOV AL, 00001000B  ;moves 08H to AL
+  MOV AL, 00001000B  ;moves 08H to AL
   OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 
                       ;and the rest 3 coils set to 0
 ;--------------------
@@ -114,13 +119,7 @@ CALL DELAY ;DELAY
 ;--------------------
 JMP START
 FULL:         ;full mode region
-IN AL,PORTB
-MOV CL,AL     ;CL=PORTB=00000011
- MOV DL,1     ;DL=1
- SHL DL,1     ;DL=00000010
- TEST CL,DL   
- JNZ FULLACW  ;if cl=00000011 go to full anticlockwise
- JMP FULLCW   ;if cl=00000001 go to full clockwise
+CALL Direction
  
 FULLCW:      ;full mode clock wise
 MOV AL, 000000011B
