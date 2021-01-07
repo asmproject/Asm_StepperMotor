@@ -167,14 +167,15 @@ CALL DELAY ;DELAY
 JMP START
 ;---procedures---
  DELAY PROC         ; DELAY PROCEDURE 
- IN AL,PORTB
- CMP BL,AL
- JNE MODE1
- IN AL,PORTC
- CMP DL,AL
- JNE DIRECTION 1
-  MOV CX, 0FFFFH     ;uses counter CX with delay time 0ffffH
+IN AL, PORTC
+ CMP BL, AL
+ JNE  MODE1
+  MOV AL, 0H;
+  OUT PORTC, AL
+  IN AL, PORTB
+  MOV CX, Ax    ;uses counter CX with delay time 0ffffH
   MYLP: LOOP MYLP    ;loops tell CX is zero
+
   RET                ; retrun to the program
  DELAY ENDP
 ;--------------
