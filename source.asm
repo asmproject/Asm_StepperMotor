@@ -190,25 +190,6 @@ MODE1:
  MODE ENDP
 ;-------------
 
- ;------------
-DIRECTION1:
- DIRECTION PROC
- IN AL,PORTB 
- MOV BL,AL     
- IN AL, PORTC  
- MOV DL,AL      
- CMP BL, AL          
- JNE NOTEQUAL
- JMP EQUAL 
- NOTEQUAL:
-  CMP BL, 00H
-  JE HALFACW
-  JMP FULLCW
- EQUAL:
- CMP BL, 00H
- JE HALFCW
- JMP FULLACW
- DIRECTION ENDP
 
     invoke ExitProcess,0
     main endp
