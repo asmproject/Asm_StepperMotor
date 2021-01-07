@@ -19,7 +19,9 @@ ORG 100H         ;starts code at address 100H
   
  
 START:          ;THE MAIN CODE
-
+ IN AL,PORTB
+ MOV BL,AL
+ MOV CL,AL
 CALL MODE      
 HALF:
 IN AL,PORTC
