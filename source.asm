@@ -226,6 +226,13 @@ STOPP ENDP
   RET
  MIDP ENDP 
 ;--------------
+ FAST:
+ FASTP PROC
+  MOV CX,0354H
+  LOOPY: LOOP LOOPY
+  RET
+ FASTP ENDP
+ ;--------------
 PRESS PROC
  IN AL, PORTC
  CMP BL, AL
@@ -240,7 +247,6 @@ MODE1:
  TEST BL,1
  JNZ FULL 
  JMP HALF
-
  MODE ENDP
 ;-------------
 
