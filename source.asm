@@ -206,7 +206,9 @@ CMP AL,00000000B
 JE STOP
 CMP AL, 00000001B
 JE MID
-  RET                ; retrun to the program
+CMP AL, 00000010B
+JE FAST
+RET                ; retrun to the program
  DELAY ENDP
 ;--------------
 STOP:
