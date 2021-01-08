@@ -25,8 +25,8 @@ START:          ;THE MAIN CODE
  MOV CL,AL
 CALL MODE       ;if Al = 01H jumps to Full(Full clockwise mode) else compelte the code(goes to HALFCW)     
 HALF:
-IN AL,PORTB
-MOV CL,AL ;CL=portb
+IN AL,PORTC
+MOV CL,AL ;CL=portC
 MOV DL,1  ;DL=1
 SHL DL,1  ;DL=00000010 to check direction
 TEST CL,DL 
@@ -120,8 +120,8 @@ CALL DELAY ;DELAY
 JMP START
 FULL:         ;full mode region
 
-N AL,PORTB
-MOV CL,AL     ;CL=PORTB
+N AL,PORTC
+MOV CL,AL     ;CL=PORTC
  MOV DL,1     ;DL=1
  SHL DL,1     ;DL=00000010
  TEST CL,DL   
@@ -178,18 +178,24 @@ JMP START
 IN AL, PORTC
  CMP BL, AL
  JNE  MODE1
- 
-  OUT PORTC, AL
-  IN AL, PORTB
-  MOV CX, Ax    ;uses counter CX with delay time 0ffffH
-  MYLP: LOOP MYLP    ;loops tell CX is zero
+ IN AX, PORTB
+ MOV CX, AX   ;uses counter CX with delay time 0ffffH
+ MYLP: LOOP MYLP    ;loops tell CX is zero
+ MOV AL,00000000B
+  OUT PORTC,AL
+  MOV CX,0FFH
+  D1: LOOP D1
+  MOV AL,00010000B
+  OUT PORTC,AL
+  MOV CX,0FFH
+  D2: LOOP D2
 
   RET                ; retrun to the program
  DELAY ENDP
 ;--------------
 MODE1:
  MODE PROC
- IN AL, PORTB   ;Copies value of port B to AL (the value of the 8 bits of portB)
+ IN AL, PORTC   ;Copies value of port C to AL (the value of the 8 bits of portB)
  MOV BL,AL       ;new value of BL 
  TEST BL,1
  JNZ FULL 
