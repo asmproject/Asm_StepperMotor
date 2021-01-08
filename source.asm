@@ -205,7 +205,7 @@ MOV CL,00H
 JE STOP
 CMP CL,08H           ;00001000
 JE MID
-CMP CL,10H
+CMP CL,10H           ;00001010
 JE FAST
 RET                ; retrun to the program
  DELAY ENDP
