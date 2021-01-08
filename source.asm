@@ -199,6 +199,7 @@ JE STOP
   RET                ; retrun to the program
  DELAY ENDP
 ;--------------
+STOP:
 STOPP PROC ;STOPP PROCEDURE 
 MOV AL,00H
 OUT PORTA,AL
