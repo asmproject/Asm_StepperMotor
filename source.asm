@@ -18,19 +18,17 @@ ORG 100H         ;starts code at address 100H
   OUT CR, AL    ;outputs(copies) value of AL 80H=1000000B  to I/O port CR 
   
  
-START:          ;THE MAIN CODE
-   MOV AH, 00H
- IN AL,PORTC
- MOV BL,AL
- MOV CL,AL
-CALL MODE       ;if Al = 01H jumps to Full(Full clockwise mode) else compelte the code(goes to HALFCW)     
-
-HALF:
+START:   ;THE MAIN CODE
 IN AL,PORTC
-MOV CL,AL ;CL=portC
-MOV DL,1  ;DL=1
-SHL DL,1  ;DL=00000010 to check direction
-TEST CL,DL 
+ MOV BL,AL
+  MOV CL,AL
+  CALL MODE       ;if Al = 01H jumps to Full(Full clockwise mode) else compelte the code(goes to HALFCW) 
+  HALF:
+IN AL,PORTC
+ MOV CL,AL ;CL=portC
+;MOV DL,1  ;DL=1
+;SHL DL,1  ;DL=00000010 to check direction
+TEST CL,02H 
 JNZ HALFACW ;if cl=00000010 go to half anticlockwise
 JMP HALFCW ;if cl=00000000 g0 to half clockwise
 HALFCW:    ;Half mode clockwise 8steps each step is 45ú
