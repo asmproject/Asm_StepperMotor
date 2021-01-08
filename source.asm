@@ -150,43 +150,52 @@ MOV CL,AL     ;CL=PORTC
 MOV AL, 000000011B
   OUT PORTA,AL
 ;--------------------
+CALL PRESS
 CALL DELAY ;DELAY 
 ;--------------------
   MOV AL, 00001001B
   OUT PORTA,AL
 ;--------------------
+CALL PRESS
 CALL DELAY ;DELAY 
 ;--------------------    
   MOV AL, 00001100B
   OUT PORTA,AL
 ;--------------------
+CALL PRESS
  CALL DELAY ;DELAY 
 ;--------------------    
   MOV AL, 00000110B
   OUT PORTA,AL
 ;--------------------
+CALL PRESS
 CALL DELAY ;DELAY 
+;-----------------
 JMP START
 ;--------
 FULLACW:     ;full mode anticlock wise
 MOV AL, 00000110B
   OUT PORTA,AL
 ;--------------------
+CALL PRESS
 CALL DELAY ;DELAY 
 ;--------------------
   MOV AL, 00001100B
   OUT PORTA,AL
 ;--------------------
+CALL PRESS
 CALL DELAY ;DELAY 
 ;--------------------    
   MOV AL, 00001001B
   OUT PORTA,AL
 ;--------------------
+CALL PRESS
  CALL DELAY ;DELAY 
 ;--------------------    
   MOV AL, 00000011B
   OUT PORTA,AL
 ;--------------------
+CALL PRESS
 CALL DELAY ;DELAY 
 ;-----------------
 JMP START
@@ -195,7 +204,8 @@ JMP START
 IN AL,PORTB
 CMP AL,00000000B
 JE STOP
-
+CMP AL, 00000001B
+JE MID
   RET                ; retrun to the program
  DELAY ENDP
 ;--------------
@@ -206,6 +216,13 @@ OUT PORTA,AL
 IN AL,PORTB
 RET 
 STOPP ENDP
+;--------------
+ MID:
+ MIDP PROC
+  MOV CX,0FFFFH
+  LOOPY: LOOP LOOPY
+  RET
+ MIDP ENDP 
 ;--------------
 PRESS PROC
  IN AL, PORTC
