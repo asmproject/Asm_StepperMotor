@@ -193,6 +193,13 @@ IN AL, PORTC
   RET                ; retrun to the program
  DELAY ENDP
 ;--------------
+PRESS PROC
+ IN AL, PORTC
+ CMP BL, AL
+ JNE  MODE1
+ RET
+ PRESS ENDP
+ ;--------------
 MODE1:
  MODE PROC
  IN AL, PORTC   ;Copies value of port C to AL (the value of the 8 bits of portB)
