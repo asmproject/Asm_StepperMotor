@@ -207,8 +207,66 @@ CALL DELAY ;DELAY
 ;--------------------
 RET
 HALFCWP ENDP
-;----------------
 
+;---------------------------------------------------------------------
+
+;--------------- Half mode anti clockwise
+HALFACWP PROC NEAR
+MOV AL, 00001001B      
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+ CALL DELAY ;DELAY    
+;--------------------
+  MOV AL, 00000001B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+ CALL DELAY ;DELAY    
+;--------------------
+  MOV AL, 00000011B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY 
+;--------------------
+  MOV AL, 00000010B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+  CALL DELAY ;DELAY   
+;--------------------
+  MOV AL, 00000110B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY    
+;--------------------
+   MOV AL, 00000100B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY   
+;--------------------
+  MOV AL, 00001100B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+ CALL DELAY ;DELAY  
+;--------------------
+ MOV AL, 00001000B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY    
+;--------------------
+RET
+HALFACWP ENDP
+ ;----------------------------------------------------------------------------------------
+ 
+ ;-----------------------------------------------------------------------------------------full anti clock wise
+ 
+ ;------------------------------------------------------------------------------------------full clock wise
 
 invoke ExitProcess,0
 main endp
