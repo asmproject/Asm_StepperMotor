@@ -18,34 +18,35 @@ ORG 100H         ;starts code at address 100H
   OUT CR, AL    ;outputs(copies) value of AL 80H=1000000B  to I/O port CR 
   
  
-START:   ;THE MAIN CODE
+START:           ;THE MAIN CODE
 IN AL,PORTC
  MOV BL,AL
   CALL MODE       ;if Al = 01H jumps to Full(Full clockwise mode) else compelte the code(goes to HALFCW) 
+  
   HALF:
 IN AL,PORTC
- MOV CL,AL ;CL=portC
+ MOV CL,AL        ;CL=portC
 TEST CL,02H 
-JNZ HALFACW ;if cl=00000010 go to half anticlockwise
-JMP HALFCW ;if cl=00000000 g0 to half clockwise
+JNZ HALFACW       ;if cl=00000010 go to half anticlockwise
+JMP HALFCW        ;if cl=00000000 g0 to half clockwise
 
-HALFCW:    ;Half mode clockwise 8steps each step is 45ú
+HALFCW:           ;Half mode clockwise 8steps each step is 45ú
   
 JMP START
+
 HALFACW:           ;Half mode anti clockwise 
 
-;--------------------
 JMP START
-FULL:         ;full mode region
-IN AL,PORTC
-MOV CL,AL     ;CL=PORTC
-; MOV DL,1     ;DL=1
-; SHL DL,1     ;DL=00000010
+;----------------------------------
+
+FULL:              ;full mode region
+ IN AL,PORTC
+ MOV CL,AL          ;CL=PORTC
  TEST CL,02H   
- JNZ FULLACW  ;if cl=00000011 go to full anticlockwise
- JMP FULLCW   ;if cl=00000001 go to full clockwise
+ JNZ FULLACW        ;if cl=00000011 go to full anticlockwise
+ JMP FULLCW         ;if cl=00000001 go to full clockwise
  
- FULLCW:     ;FULL mode clockwise 4steps each step is 90ْ
+ FULLCW:            ;FULL mode clockwise 4steps each step is 90ْ
 
 MOV AL, 000000011B
   OUT PORTA,AL
@@ -152,7 +153,63 @@ MODE1:
  MODE ENDP
 ;-------------
 
+;--------------- Half mode clockwise proc
+HALFCWP PROC 
+ MOV AL, 00001000B  ;moves 08H to AL
+  OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 
+                      ;and the rest 3 coils set to 0
+;--------------------
+  CALL PRESS
+ CALL DELAY ;DELAY
+;--------------------
+  MOV AL, 00001100B
+  OUT PORTA,AL       ;outputs(copies) value of AL 0CH  to I/O port PORTA which means A,B coils (for example) is set to 1 
+                      ;and the rest 2 coils set to 0
+;--------------------
+  CALL PRESS
+ CALL DELAY ;DELAY
+;--------------------
+   MOV AL, 00000100B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY
+;--------------------
+  MOV AL, 00000110B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY   
+;--------------------
+ MOV AL, 00000010B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY  
+;--------------------
+  MOV AL, 00000011B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY 
+;--------------------
+  MOV AL, 00000001B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY  
+;--------------------
+  MOV AL, 00001001B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY  
+;--------------------
+RET
+HALFCWP ENDP
+;----------------
 
-    invoke ExitProcess,0
-    main endp
+
+invoke ExitProcess,0
+main endp
 end main
