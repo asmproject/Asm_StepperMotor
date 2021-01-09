@@ -21,13 +21,10 @@ ORG 100H         ;starts code at address 100H
 START:   ;THE MAIN CODE
 IN AL,PORTC
  MOV BL,AL
-  MOV CL,AL
   CALL MODE       ;if Al = 01H jumps to Full(Full clockwise mode) else compelte the code(goes to HALFCW) 
   HALF:
 IN AL,PORTC
  MOV CL,AL ;CL=portC
-;MOV DL,1  ;DL=1
-;SHL DL,1  ;DL=00000010 to check direction
 TEST CL,02H 
 JNZ HALFACW ;if cl=00000010 go to half anticlockwise
 JMP HALFCW ;if cl=00000000 g0 to half clockwise
