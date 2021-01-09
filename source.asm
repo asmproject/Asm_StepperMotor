@@ -218,6 +218,34 @@ HALFACWP ENDP
  ;----------------------------------------------------------------------------------------
  
  ;-----------------------------------------------------------------------------------------full anti clock wise
+FULLACWP PROC NEAR
+ MOV AL, 00000110B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY 
+;--------------------
+  MOV AL, 00001100B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00001001B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+ CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00000011B
+  OUT PORTA,AL
+;--------------------
+CALL PRESS
+CALL DELAY ;DELAY 
+;-----------------
+
+RET
+FULLACWP ENDP
  
  ;------------------------------------------------------------------------------------------full clock wise
  FULLCWP PROC NEAR 
