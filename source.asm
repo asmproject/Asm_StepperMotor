@@ -31,11 +31,11 @@ JNZ HALFACW       ;if cl=00000010 go to half anticlockwise
 JMP HALFCW        ;if cl=00000000 g0 to half clockwise
 
 HALFCW:           ;Half mode clockwise 8steps each step is 45ú
-  
+CALL HALFCWP
 JMP START
 
 HALFACW:           ;Half mode anti clockwise 
-
+CALL HALFACWP
 JMP START
 ;----------------------------------
 
@@ -154,7 +154,7 @@ MODE1:
 ;-------------
 
 ;--------------- Half mode clockwise proc
-HALFCWP PROC 
+HALFCWP PROC NEAR 
  MOV AL, 00001000B  ;moves 08H to AL
   OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 
                       ;and the rest 3 coils set to 0
