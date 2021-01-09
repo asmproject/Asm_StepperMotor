@@ -47,31 +47,7 @@ FULL:              ;full mode region
  JMP FULLCW         ;if cl=00000001 go to full clockwise
  
  FULLCW:            ;FULL mode clockwise 4steps each step is 90ْ
-
-MOV AL, 000000011B
-  OUT PORTA,AL
-;--------------------
-CALL PRESS
-CALL DELAY ;DELAY 
-;--------------------
-  MOV AL, 00001001B
-  OUT PORTA,AL
-;--------------------
-CALL PRESS
-CALL DELAY ;DELAY 
-;--------------------    
-  MOV AL, 00001100B
-  OUT PORTA,AL
-;--------------------
-CALL PRESS
- CALL DELAY ;DELAY 
-;--------------------    
-  MOV AL, 00000110B
-  OUT PORTA,AL
-;--------------------
-CALL PRESS
-CALL DELAY ;DELAY 
-;-----------------
+CALL FULLCWP
 JMP START
 ;--------
 FULLACW:     ;full mode anticlock wise
@@ -267,6 +243,34 @@ HALFACWP ENDP
  ;-----------------------------------------------------------------------------------------full anti clock wise
  
  ;------------------------------------------------------------------------------------------full clock wise
+ FULLCWP PROC NEAR 
+ MOV AL, 000000011B
+  OUT PORTA,AL
+;--------------------
+CALL PRESS
+CALL DELAY ;DELAY 
+;--------------------
+  MOV AL, 00001001B
+  OUT PORTA,AL
+;--------------------
+CALL PRESS
+CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00001100B
+  OUT PORTA,AL
+;--------------------
+CALL PRESS
+ CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00000110B
+  OUT PORTA,AL
+;--------------------
+CALL PRESS
+CALL DELAY ;DELAY 
+;-----------------
+RET
+FULLCWP ENDP
+;------------------------
 
 invoke ExitProcess,0
 main endp
