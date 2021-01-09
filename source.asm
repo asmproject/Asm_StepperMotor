@@ -51,30 +51,7 @@ CALL FULLCWP
 JMP START
 ;--------
 FULLACW:     ;full mode anticlock wise
-MOV AL, 00000110B
-  OUT PORTA,AL
-;--------------------
-CALL PRESS
-CALL DELAY ;DELAY 
-;--------------------
-  MOV AL, 00001100B
-  OUT PORTA,AL
-;--------------------
-CALL PRESS
-CALL DELAY ;DELAY 
-;--------------------    
-  MOV AL, 00001001B
-  OUT PORTA,AL
-;--------------------
-CALL PRESS
- CALL DELAY ;DELAY 
-;--------------------    
-  MOV AL, 00000011B
-  OUT PORTA,AL
-;--------------------
-CALL PRESS
-CALL DELAY ;DELAY 
-;-----------------
+
 JMP START
 ;---procedures---
  DELAY PROC         ; DELAY PROCEDURE 
