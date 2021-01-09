@@ -51,7 +51,7 @@ CALL FULLCWP
 JMP START
 ;--------
 FULLACW:     ;full mode anticlock wise
-
+CALL FULLACWP
 JMP START
 ;---procedures---
  DELAY PROC         ; DELAY PROCEDURE 
