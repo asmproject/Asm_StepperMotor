@@ -40,10 +40,15 @@
 > >  is an octal D-type transparent latch , works as storage device, holds data through feedback lane
 > >
 > ### 3- I/O device : 8255A  
-> > write a description here
+> >  intel general purpose programmable  I/O device, used in 2 modes either i/o mode or BSR mode, in out project it’s used  in i/O mode.
+      - It has 3-ports are used as i/o ,(PortA,PortB,PortC).
+      - PORTC is consist of PC Lower, PC Upper
+      - There are different modes ,we use mode 0
+      - So,let D6=0 , D5=0 ,D2=0
+      - To use as i/o mode ,let D7=1
 > > 
 > ### 4- motor driver:  ULN2003A   
-> > write a description here
+> >- is a type of motor driver used to amplify the current produced by our circuit to suit the current needed by the stepper 
 > >
 > ### 5- stepper motor
 > ### 6- battary 12V
