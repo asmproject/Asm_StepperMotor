@@ -54,19 +54,23 @@ FULLACW:     ;full mode anticlock wise
 CALL FULLACWP
 JMP START
 ;---procedures---
- DELAY PROC         ; DELAY PROCEDURE 
-IN AL,PORTC
-MOV CL,AL
-AND CL,1CH
-MOV CL,00H
-JE STOP
-CMP CL,08H           ;00001000
-JE MID
-CMP CL,10H           ;00001010
-JE FAST
-RET                ; retrun to the program
- DELAY ENDP
+DELAY PROC NEAR  ; DELAY PROCEDURE 
+    IN AL, PORTC
+    MOV CL,AL
+    AND CL,1CH
+    CMP CL, 00H   
+    JE  STOP
+    CMP CL, 04H   ;00000100 
+    JE  NORM  
+    CMP CL, 08H
+    JE MID
+    CMP CL,10H
+    JE FAST
+    RET
+  DELAY ENDP
+ 
 ;--------------
+
 STOP:
 STOPP PROC ;STOPP PROCEDURE 
 MOV AL,00H
