@@ -57,14 +57,14 @@ JMP START
 DELAY PROC NEAR  ; DELAY PROCEDURE 
     IN AL, PORTC
     MOV CL,AL
-    AND CL,1CH
+    AND CL,1CH   ;1CH= 0001 1100
     CMP CL, 00H   
     JE  STOP
     CMP CL, 04H   ;00000100 
     JE  NORM  
-    CMP CL, 08H
+    CMP CL, 08H  ;0000 1000
     JE MID
-    CMP CL,10H
+    CMP CL,10H    ;0001 0000
     JE FAST
     RET
   DELAY ENDP
@@ -72,7 +72,7 @@ DELAY PROC NEAR  ; DELAY PROCEDURE
 ;--------------
 NORM:
  NORMP PROC NEAR
-  MOV CX,0ffffH
+  MOV CX,0ffffH  ; cx big ... delay big .... speed decrease 
   LOOPY: LOOP LOOPY
   RET
  NORMP ENDP
