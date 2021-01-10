@@ -13,6 +13,7 @@
        * Normal
        * Intermediate
        * Fast
+       
 <a name="desc"></a>
 ## Stepper motor working princible
  write the description here
@@ -35,7 +36,7 @@
 # Half Clock-Wise
 # intermediate speed
 
-code
+
 
 ~~~
  put the Gif
@@ -46,7 +47,7 @@ code
 # Half Anti Clock-Wise
 # fast speed
 
-code
+
 
 ~~~
  put the Gif
@@ -60,7 +61,7 @@ code
 ~~~markdown
 # FULL Clock-Wise
 # fast speed
-code
+
 
 ~~~
  put the Gif
@@ -72,35 +73,11 @@ code
 # intermediate speed
 
 ~~~
+
 ```javascript
-function test(){
-	console.log("Hello world!");
-}
- 
-(function(){
-    var box = function(){
-        return box.fn.init();
-    };
 
-    box.prototype = box.fn = {
-        init : function(){
-            console.log('box.init()');
-
-			return this;
-        },
-
-		add : function(str){
-			alert("add", str);
-
-			return this;
-		},
-
-		remove : function(str){
-			alert("remove", str);
-
-			return this;
-		}
-    };
-    
+ FULLACW PROC
+ FULLACW ENDP
+```
  put the Gif
  
