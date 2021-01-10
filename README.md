@@ -32,6 +32,8 @@
 > 
 > ![](GIFS/circuitDiagram.PNG)
 > ### 1- 8086 µp
+> > write a description here
+> >
 > > so after all 8086 µp is only the CPU of our program -processes and  executes our assembly code- so it needs to be connected to a 
 > > storage device and an I/O device, here comes the rule of …
 > ### 2- latch : 74HC373 
@@ -39,11 +41,11 @@
 > >
 > ### 3- I/O device : 8255A  
 > >  intel general purpose programmable  I/O device, used in 2 modes either i/o mode or BSR mode, in out project it’s used  in i/O mode.
-> >   - It has 3-ports are used as i/o ,(PortA,PortB,PortC).
-> >   - PORTC is consist of PC Lower, PC Upper.
-> >   - There are different modes ,we use mode 0.
-> >   - So,let D6=0 , D5=0 ,D2=0.
-> >   - To use as i/o mode ,let D7=1.
+   - It has 3-ports are used as i/o ,(PortA,PortB,PortC).
+   - PORTC is consist of PC Lower, PC Upper.
+   -  There are different modes ,we use mode 0.
+   -  So,let D6=0 , D5=0 ,D2=0.
+   -  To use as i/o mode ,let D7=1.
 > > 
 > ### 4- motor driver:  ULN2003A   
 > > is a type of motor driver used to amplify the current produced by our circuit to suit the current needed by the stepper 
