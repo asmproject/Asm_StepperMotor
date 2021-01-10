@@ -30,7 +30,7 @@
 ## Components
 > ### Circuit Design
 > 
-> ![](%20ourgif/%20circuitdiagram.PNG)
+> ![](GIFS/circuitDiagram.PNG)
 > ### 1- 8086 µp
 > > write a description here
 > >
