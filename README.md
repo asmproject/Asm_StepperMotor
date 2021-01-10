@@ -1,16 +1,20 @@
 # Asm_StepperMotor
- ** Contents **
+ 
+ * stepper motor with 8086 µp 
+        + Green 
+            * dark  green 
+            * lime  
+        - Blue      
+            1. Item one
+                1. subitem 1
+                1. subitem 2
+            1. Item two
 
-[TOCM]
+                This is is a first paragraph.
 
-# stepper motor with 8086 µp
-# Modes 
-## Full mode
-## Half mode
-# Directions 
-## Clock-wise
-## Anti clock-wise
-# Speed
-## normal 
-## intermediate 
-## intermediate 
+                * Green 
+                * Blue
+
+                This is a second paragraph.
+
+            1. Item three
