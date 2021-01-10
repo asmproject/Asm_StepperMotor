@@ -40,12 +40,12 @@
 > >  is an octal D-type transparent latch , works as storage device, holds data through feedback lane
 > >
 > ### 3- I/O device : 8255A  
-> > - intel general purpose programmable  I/O device, used in 2 modes either i/o mode or BSR mode, in out project it’s used  in i/O mode.
-  - It has 3-ports are used as i/o ,(PortA,PortB,PortC).
-  - PORTC is consist of PC Lower, PC Upper.
-  -  There are different modes ,we use mode 0.
-  -  So,let D6=0 , D5=0 ,D2=0.
-  -  To use as i/o mode ,let D7=1.
+> >  intel general purpose programmable  I/O device, used in 2 modes either i/o mode or BSR mode, in out project it’s used  in i/O mode.
+ > >  - It has 3-ports are used as i/o ,(PortA,PortB,PortC).
+  > > - PORTC is consist of PC Lower, PC Upper.
+  > > -  There are different modes ,we use mode 0.
+  > > -  So,let D6=0 , D5=0 ,D2=0.
+ > >  -  To use as i/o mode ,let D7=1.
 > > 
 > ### 4- motor driver:  ULN2003A   
 > > is a type of motor driver used to amplify the current produced by our circuit to suit the current needed by the stepper 
@@ -57,32 +57,32 @@
  
  <a name="code"></a>
 ## Code Explanation
-# we have in our code 11 Procedures.
- - MODE PROC
-   > Determine whice mode is choosed by user by:
-   Get input from portc by logic gates (0 or 1 )
-   - PC0 =1   go to full mode.
-   - PC0 =0   go to half mode.
-   Call in the start of code.
-- PRESS PROC
-   > Check if user change mode,or direction ,or speed by:
-   Compare the Present value of portc by the provious value of portc.
-   Call after ever steps in half or full mode.
-- FULLCW
-- FULLACW
-- HALFCW
-- HALFACW
-   - This 4 procedures have code of every mode (steps that motor do).
-     > Port A is get its value for every revolution from this procedure.
-     Is Determined after call MODE PROC by check PC1. 
-    - PC1 =0         go to clock wise 
-    - PC1 =1         go to anti clock wise 
+> >  we have in our code 11 Procedures.
+> > - MODE PROC
+> >  > Determine whice mode is choosed by user by:
+> >   Get input from portc by logic gates (0 or 1 )
+> >  - PC0 =1   go to full mode.
+ > >    - PC0 =0   go to half mode.
+ > >  Call in the start of code.
+ > > - PRESS PROC
+ > >  > Check if user change mode,or direction ,or speed by:
+ > >  Compare the Present value of portc by the provious value of portc.
+> >   Call after ever steps in half or full mode.
+> > - FULLCW
+> > - FULLACW
+> > - HALFCW
+> > - HALFACW
+> >   - This 4 procedures have code of every mode (steps that motor do).
+  > >   > Port A is get its value for every revolution from this procedure.
+  > >   Is Determined after call MODE PROC by check PC1. 
+  > >  - PC1 =0         go to clock wise 
+  > >  - PC1 =1         go to anti clock wise 
 
-- DELAY PROC
-   > In our project ,we control speed by using different delays after every revolution.
-   We have 3 speeds low , intermediate , high.
-   Every speed has its own delay.
-    - Delay low >> delay intermediate >> delay high
+> > - DELAY PROC
+ > >  > In our project ,we control speed by using different delays after every revolution.
+ > >  We have 3 speeds low , intermediate , high.
+> >   Every speed has its own delay.
+ > >   - Delay low >> delay intermediate >> delay high
    Is determined by check PC2 , PC3  , PC4
     - PC2  =1    speed is low.
     - PC3  =1    speed is intermediate.
