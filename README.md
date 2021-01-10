@@ -83,19 +83,19 @@
  > >  We have 3 speeds low , intermediate , high.
 > >   Every speed has its own delay.
  > >   - Delay low >> delay intermediate >> delay high
-   Is determined by check PC2 , PC3  , PC4
-    - PC2  =1    speed is low.
-    - PC3  =1    speed is intermediate.
-    - PC3  =1    speed is high.
-    - If  PC2  =0   &&  PC3  =0   &&  PC4  =0   
-       > Motor will stop.
+> >   Is determined by check PC2 , PC3  , PC4
+> >    - PC2  =1    speed is low.
+> >    - PC3  =1    speed is intermediate.
+> >    - PC3  =1    speed is high.
+> >    - If  PC2  =0   &&  PC3  =0   &&  PC4  =0   
+> >       > Motor will stop.
 
-- NORMP PROC
-- MIDP PROC
-- FASTP PROC
-  > This 3 procedure have code whice control delay for every speed.
-- STOPP PROC
-> This proc let portA take 00H as o/p to let motor stop working.
+> > - NORMP PROC
+> > - MIDP PROC
+> > - FASTP PROC
+> >  > This 3 procedure have code whice control delay for every speed.
+> > - STOPP PROC
+> >  > This proc let portA take 00H as o/p to let motor stop working.
  
   <a name="half"></a>
 ### Half Mode
