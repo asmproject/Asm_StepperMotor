@@ -26,7 +26,7 @@ IN AL,PORTC
   HALF:
 IN AL,PORTC
  MOV CL,AL        ;CL=portC
-TEST CL,02H 
+TEST CL,02H       ; 02H=0000 0010B
 JNZ HALFACW       ;if cl=00000010 go to half anticlockwise
 JMP HALFCW        ;if cl=00000000 g0 to half clockwise
 
