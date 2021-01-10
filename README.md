@@ -37,7 +37,7 @@
 > > so after all 8086 µp is only the CPU of our program -processes and  executes our assembly code- so it needs to be connected to a 
 > > storage device and an I/O device, here comes the rule of …
 > ### 2- latch : 74HC373 
-> > write a description here
+> >  is an octal D-type transparent latch , works as storage device, holds data through feedback lane
 > >
 > ### 3- I/O device : 8255A  
 > > write a description here
