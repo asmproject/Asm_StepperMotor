@@ -3,7 +3,7 @@
  * [Stepper motor working princible](http://localhost/)
  + [Components](http://localhost/)
  - [Code explanation](http://localhost/)
-     1. Modes
+    1. Modes
        * [Half mode](http://localhost/) 
        * [Full mode](http://localhost/)  
     2. Directions      
