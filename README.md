@@ -1,20 +1,13 @@
-# Asm_StepperMotor
- 
+# Stepper_Motor :cd:
+##Table Of Contents
  * stepper motor with 8086 µp 
-        + Green 
-            * dark  green 
-            * lime  
-        - Blue      
-            1. Item one
-                1. subitem 1
-                1. subitem 2
-            1. Item two
-
-                This is is a first paragraph.
-
-                * Green 
-                * Blue
-
-                This is a second paragraph.
-
-            1. Item three
+ + Modes
+     * Half mode 
+     * Full mode  
+ - Directions      
+     * Clock-Wise
+     * Anti Cloc-Wise
+ - Speed      
+     * Normal
+     * Intermediate
+     * Fast
