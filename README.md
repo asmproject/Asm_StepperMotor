@@ -59,7 +59,7 @@ code
   
 ~~~markdown
 #### FULL Clock-Wise
-
+# fast speed
 code
 
 ~~~
@@ -69,7 +69,7 @@ code
   
 ~~~markdown
 # FULL Anti Clock-Wise
-
+# intermediate speed
 code
 
 ~~~
