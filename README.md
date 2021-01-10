@@ -114,8 +114,10 @@
 
   
 ~~~markdown
-> # Half Clock-Wise
-> # intermediate speed
+ # Half Clock-Wise
+ # intermediate speed
+ 
+ ![](GIFS/halfAcwMid.gif)
  
 ~~~
 ```javascript
