@@ -109,15 +109,13 @@ MODE1:
 ;--------------- Half mode clockwise proc
 HALFCWP PROC NEAR 
  MOV AL, 00001000B  ;moves 08H to AL
-  OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 
-                      ;and the rest 3 coils set to 0
+  OUT PORTA,AL        ;outputs(copies) value of AL 08H  to I/O port PORTA which means the coil A(for example) is set to 1 and the rest 3 coils set to 0
 ;--------------------
   CALL PRESS
  CALL DELAY ;DELAY
 ;--------------------
   MOV AL, 00001100B
-  OUT PORTA,AL       ;outputs(copies) value of AL 0CH  to I/O port PORTA which means A,B coils (for example) is set to 1 
-                      ;and the rest 2 coils set to 0
+  OUT PORTA,AL       ;outputs(copies) value of AL 0CH  to I/O port PORTA which means A,B coils (for example) is set to 1 and the rest 2 coils set to 0
 ;--------------------
   CALL PRESS
  CALL DELAY ;DELAY
