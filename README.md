@@ -1,5 +1,5 @@
 # Asm_StepperMotor
- ** Contents**
+ ** Contents **
 
 [TOCM]
 # stepper motor with 8086 µp
