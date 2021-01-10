@@ -59,6 +59,8 @@
 ~~~markdown
 # Half Clock-Wise
 # intermediate speed
+ HALFCW PROC
+  HALFCW ENDP
 ~~~
  put the Gif
  
@@ -67,7 +69,8 @@
 ~~~markdown
 # Half Anti Clock-Wise
 # fast speed
-
+ HALFACW PROC
+  HALFACW ENDP
 ~~~
  put the Gif
  
@@ -83,9 +86,11 @@
 ~~~markdown
 # FULL Clock-Wise
 # fast speed
+FULLCW PROC
+ FULLCW ENDP
 
 ~~~
- put the Gif
+   put the Gif
  
  
   
@@ -93,12 +98,8 @@
 # FULL Anti Clock-Wise
 # intermediate speed
 
-~~~
 
-```javascript
-
- FULLACW PROC
+FULLACW PROC
  FULLACW ENDP
-```
  put the Gif
  
