@@ -117,9 +117,8 @@
  # Half Clock-Wise
  # intermediate speed
  
- ![](GIFS/halfAcwMid.gif)
- 
 ~~~
+![](GIFS/halfcwMid.gif)
 ```javascript
 HALFCWP PROC
 MOV AL, 00001000B  ;moves 08H to AL
