@@ -32,8 +32,8 @@
   brief description
   
 ~~~markdown
-#### Half Clock-Wise
-##### intermediate speed
+# Half Clock-Wise
+# intermediate speed
 
 code
 
@@ -43,8 +43,8 @@ code
  
   
 ~~~markdown
-#### Half Clock-Wise
-##### fast speed
+# Half Anti Clock-Wise
+# fast speed
 
 code
 
