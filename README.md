@@ -26,7 +26,7 @@
 >      - clockwise
 > ### stepper motor works in different speeds: 
 >      - normal speed
->      - midium speed 
+>      - intermediate speed 
 >      - high speed
 > ### to control the speed:
 > - we used  3 buttons..
