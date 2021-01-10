@@ -33,6 +33,7 @@
   
 ~~~markdown
 #### Half Clock-Wise
+##### intermediate speed
 
 code
 
@@ -42,7 +43,8 @@ code
  
   
 ~~~markdown
-# Half Clock-Wise
+#### Half Clock-Wise
+##### fast speed
 
 code
 
