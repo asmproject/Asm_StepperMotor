@@ -72,39 +72,39 @@
 > > - FULLACW
 > > - HALFCW
 > > - HALFACW
-> >   - This 4 procedures have code of every mode (steps that motor do).
-  > >   > Port A is get its value for every revolution from this procedure.
-  > >   Is Determined after call MODE PROC by check PC1. 
-  > >  - PC1 =0         go to clock wise 
-  > >  - PC1 =1         go to anti clock wise 
+> >    - This 4 procedures have code of every mode (steps that motor do).
+  > >     > Port A is get its value for every revolution from this procedure.
+  > >  >Is Determined after call MODE PROC by check PC1. 
+  > >     - PC1 =0         go to clock wise 
+  > >     - PC1 =1         go to anti clock wise 
 
 > > - DELAY PROC
- > >  > In our project ,we control speed by using different delays after every revolution.
- > >  We have 3 speeds low , intermediate , high.
-> >   Every speed has its own delay.
- > >   - Delay low >> delay intermediate >> delay high
-> >   Is determined by check PC2 , PC3  , PC4
-> >    - PC2  =1    speed is low.
-> >    - PC3  =1    speed is intermediate.
-> >    - PC3  =1    speed is high.
-> >    - If  PC2  =0   &&  PC3  =0   &&  PC4  =0   
-> >       > Motor will stop.
+ > >    > In our project ,we control speed by using different delays after every revolution.
+ > >    > We have 3 speeds low , intermediate , high.
+> >     > Every speed has its own delay.
+ > >       - Delay low >> delay intermediate >> delay high
+> >    > Is determined by check PC2 , PC3  , PC4
+> >         > - PC2  =1    speed is low.
+> >         > - PC3  =1    speed is intermediate.
+> >         > - PC3  =1    speed is high.
+> >         > - If  PC2  =0   &&  PC3  =0   &&  PC4  =0   
+> >               > Motor will stop.
 
 > > - NORMP PROC
 > > - MIDP PROC
 > > - FASTP PROC
-> >  > This 3 procedure have code whice control delay for every speed.
+> >     > This 3 procedure have code whice control delay for every speed.
 > > - STOPP PROC
-> >  > This proc let portA take 00H as o/p to let motor stop working.
+> >     > This proc let portA take 00H as o/p to let motor stop working.
  
   <a name="half"></a>
 ### Half Mode
   
 > - The motor rotates a full revolution in 8 steps ,each step is a 45o  step angle  . 
- - This mode works on the alternate energizing principle ,at one moment only 1 coil is energized, but in the very next moment 2 coils are energized, then again back to 1.       
-# This table shows the logic of programming stepper motor in full mode in clock wise.
- - To rotate the motor in anti-clock wise just reverse the logic from bottom to top.
-> -#image table
+> - This mode works on the alternate energizing principle ,at one moment only 1 coil is energized, but in the very next moment 2 coils are energized, then again back to 1.       
+> ### This table shows the logic of programming stepper motor in full mode in clock wise.
+        - To rotate the motor in anti-clock wise just reverse the logic from bottom to top.
+# image table
 
   
 ~~~markdown
@@ -136,10 +136,10 @@ HALFACW PROC
  
   <a name="full"></a>
 ### FULL Mode
->  - The motor rotates a full revolution in 4 steps ,each step is a 90o  step angle , In this mode two coils are energized - logic 1 is given to two coils - at a time 
-# This table shows the logic of programming stepper motor in full mode in clock wise direction where A,B,C and D are the coils of the motor.
- - To rotate the motor in anti-clock wise just reverse the logic from bottom to top
-> #table image
+>   The motor rotates a full revolution in 4 steps ,each step is a 90o  step angle , In this mode two coils are energized - logic 1 is given to two coils - at a time 
+> # This table shows the logic of programming stepper motor in full mode in clock wise direction where A,B,C and D are the coils of the motor.
+       > - To rotate the motor in anti-clock wise just reverse the logic from bottom to top
+# table image
 
   
 ~~~markdown
