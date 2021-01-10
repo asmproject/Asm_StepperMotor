@@ -101,5 +101,7 @@ FULLCW PROC
 
 FULLACW PROC
  FULLACW ENDP
- put the Gif
+~~~
+   put the Gif
+ 
  
