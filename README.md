@@ -28,14 +28,27 @@
 
 <a name="comp"></a>
 ## Components
-> write a line next to each arrow an if u need more line add more arrows
+> ### Circuit Design
 > 
-> bluh
-> 
-> 
-> bluh bluh
-> 
-> 
+> ![](our gif/%20circuitdiagram.PNG)
+> ### 1- 8086 µp
+> > write a description here
+> >
+> > so after all 8086 µp is only the CPU of our program -processes and  executes our assembly code- so it needs to be connected to a 
+> > storage device and an I/O device, here comes the rule of …
+> ### 2- latch : 74HC373 
+> > write a description here
+> >
+> ### 3- I/O device : 8255A  
+> > write a description here
+> > 
+> ### 4- motor driver:  ULN2003A   
+> > write a description here
+> >
+> ### 5- stepper motor
+> ### 6- battary 12V
+> ### 7- logicstates
+
  
  <a name="code"></a>
 ## Code Explanation
