@@ -109,7 +109,8 @@
 > - This mode works on the alternate energizing principle ,at one moment only 1 coil is energized, but in the very next moment 2 coils are energized, then again back to 1.       
 > ### This table shows the logic of programming stepper motor in full mode in clock wise.
 > - To rotate the motor in anti-clock wise just reverse the logic from bottom to top.
-# image table
+
+> ![](GIFS/half table.PNG)
 
   
 ~~~markdown
