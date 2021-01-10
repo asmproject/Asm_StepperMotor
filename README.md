@@ -16,21 +16,45 @@
        
 <a name="desc"></a>
 ## Stepper motor working princible
- write the description here
+> write a line next to each arrow an if u need more line add more arrows
+> 
+> bluh
+> 
+> 
+> bluh bluh
+> 
+>    
 
 
 <a name="comp"></a>
 ## Components
- write the description here
+> write a line next to each arrow an if u need more line add more arrows
+> 
+> bluh
+> 
+> 
+> bluh bluh
+> 
+> 
  
  <a name="code"></a>
 ## Code Explanation
- write the description here
+> write a line next to each arrow an if u need more line add more arrows
+> 
+> bluh
+> 
+> 
+> bluh bluh
+> 
+> 
  
   <a name="half"></a>
 ### Half Mode
   
-  brief description
+  > write a line next to each arrow an if u need more line add more arrows
+> 
+> bluh
+
   
 ~~~markdown
 # Half Clock-Wise
@@ -50,8 +74,11 @@
  
   <a name="full"></a>
 ### FULL Mode
-  
-  brief description
+> write a line next to each arrow an if u need more line add more arrows
+> 
+> bluh
+> 
+
   
 ~~~markdown
 # FULL Clock-Wise
