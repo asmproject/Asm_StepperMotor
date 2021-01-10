@@ -70,29 +70,36 @@ DELAY PROC NEAR  ; DELAY PROCEDURE
   DELAY ENDP
  
 ;--------------
-
-STOP:
-STOPP PROC ;STOPP PROCEDURE 
-MOV AL,00H
-OUT PORTA,AL
-IN AL,PORTB
-RET 
-STOPP ENDP
-;--------------
- MID:
- MIDP PROC
-  MOV CX,0FFFFH
+NORM:
+ NORMP PROC NEAR
+  MOV CX,0ffffH
   LOOPY: LOOP LOOPY
   RET
- MIDP ENDP 
-;--------------
- FAST:
- FASTP PROC
-  MOV CX,0354H
+ NORMP ENDP
+;-----------------
+MID:
+ MIDP PROC NEAR 
+  MOV CX,04000H
+  LOOPY: LOOP LOOPY
+  RET
+ MIDP ENDP
+;----------------- 
+FAST:
+ FASTP PROC NEAR
+  MOV CX,0fffH
   LOOPY: LOOP LOOPY
   RET
  FASTP ENDP
- ;--------------
+ ;-------------------
+STOP:
+ STOPP PROC NEAR
+  MOV AL, 00H
+  OUT PORTA , AL
+  RET
+  STOPP ENDP
+  ;---------------
+
+
 PRESS PROC
  IN AL, PORTC
  CMP BL, AL
