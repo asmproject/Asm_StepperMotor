@@ -61,8 +61,11 @@
 # intermediate speed
  
 ~~~
+```javascript
 HALFCW PROC
   HALFCW ENDP
+   ```
+  
  put the Gif
  
  
@@ -72,10 +75,13 @@ HALFCW PROC
 # fast speed
  
 ~~~
+```javascript
 HALFACW PROC
   HALFACW ENDP
+   ```
+
  put the Gif
- 
+
  
   <a name="full"></a>
 ### FULL Mode
@@ -91,8 +97,10 @@ HALFACW PROC
 
 
 ~~~
+```javascript
 FULLCW PROC
- FULLCW ENDP
+  FULLCW ENDP
+   ```
    put the Gif
  
  
@@ -104,8 +112,10 @@ FULLCW PROC
 
 
 ~~~
+```javascript
 FULLACW PROC
- FULLACW ENDP
+  FULLACW ENDP
+   ```
    put the Gif
  
  
