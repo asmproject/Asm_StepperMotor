@@ -1,13 +1,15 @@
 # Stepper_Motor :cd:
 ##Table Of Contents
- * [stepper motor with 8086 µp](http://localhost/)
- + Modes
-     * Half mode 
-     * Full mode  
- - Directions      
-     * Clock-Wise
-     * Anti Cloc-Wise
- - Speed      
-     * Normal
-     * Intermediate
-     * Fast
+ * [Stepper motor working princible](http://localhost/)
+ + [Components](http://localhost/)
+ - [Code explanation](http://localhost/)
+     1. Modes
+       * [Half mode](http://localhost/) 
+       * [Full mode](http://localhost/)  
+    2. Directions      
+       * [Clock-Wise](http://localhost/)
+       * [Anti Cloc-Wise](http://localhost/)
+    3. Speed      
+       * [Normal](http://localhost/)
+       * [Intermediate](http://localhost/)
+       * [Fast](http://localhost/)
