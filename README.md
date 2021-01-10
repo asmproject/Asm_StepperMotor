@@ -2,7 +2,7 @@
  ** Contents**
 
 [TOCM]
-#stepper motor with 8086 µp
+# stepper motor with 8086 µp
 #Modes 
 ##Full mode
 ##Half mode
