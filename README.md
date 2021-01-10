@@ -119,7 +119,7 @@
  
 ~~~
 ```javascript
-HALFCW PROC
+HALFCWP PROC
 MOV AL, 00001000B  ;moves 08H to AL
   OUT PORTA,AL       
 ;--------------------
@@ -169,7 +169,7 @@ CALL DELAY ;DELAY
 CALL DELAY ;DELAY  
 ;--------------------
 RET
-  HALFCW ENDP
+  HALFCWP ENDP
    ```
   
  put the Gif
@@ -182,8 +182,57 @@ RET
  
 ~~~
 ```javascript
-HALFACW PROC
-  HALFACW ENDP
+HALFACWP PROC
+MOV AL, 00001001B      
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+ CALL DELAY ;DELAY    
+;--------------------
+  MOV AL, 00000001B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+ CALL DELAY ;DELAY    
+;--------------------
+  MOV AL, 00000011B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY 
+;--------------------
+  MOV AL, 00000010B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+  CALL DELAY ;DELAY   
+;--------------------
+  MOV AL, 00000110B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY    
+;--------------------
+   MOV AL, 00000100B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY   
+;--------------------
+  MOV AL, 00001100B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+ CALL DELAY ;DELAY  
+;--------------------
+ MOV AL, 00001000B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY    
+;--------------------
+RET
+  HALFACWP ENDP
    ```
 
  put the Gif
