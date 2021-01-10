@@ -110,7 +110,7 @@
 > ### This table shows the logic of programming stepper motor in full mode in clock wise.
 > - To rotate the motor in anti-clock wise just reverse the logic from bottom to top.
 
-> ![](GIFS/half table.PNG)
+> ![](GIFS/half%20table.PNG)
 
   
 ~~~markdown
