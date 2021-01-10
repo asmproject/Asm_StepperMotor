@@ -78,15 +78,15 @@
 
 >  - DELAY PROC
 > > In our project ,we control speed by using different delays after every revolution.
-> >  - We have 3 speeds low , intermediate , high.
-> >  - Every speed has its own delay.
-> >  - Delay low >> delay intermediate >> delay high
-> >  - Is determined by check PC2 , PC3  , PC4
+> >    - We have 3 speeds low , intermediate , high.
+> >    - Every speed has its own delay.
+> >    - Delay low >> delay intermediate >> delay high
+> >    - Is determined by check PC2 , PC3  , PC4
 > >        - PC2  =1    speed is low.
 > >        - PC3  =1    speed is intermediate.
 > >        - PC3  =1    speed is high.
-> >        - If  PC2  =0   &&  PC3  =0   &&  PC4  =0   
-> >           - Motor will stop.
+> >        - Motor will stop , when PC2  =0   &&  PC3  =0   &&  PC4  =0   
+> >            
 
 >  - NORMP PROC
 >  - MIDP PROC
