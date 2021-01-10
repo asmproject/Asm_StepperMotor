@@ -1,18 +1,51 @@
 # Stepper_Motor :cd:
 ## Table Of Contents
  * [Stepper motor working princible](#desc)
- + [Components](http://localhost/)
- - [Code explanation](http://localhost/)
+ + [Components](#comp)
+ - [Code Explanation](#code)
     1. Modes
-       * [Half mode](http://localhost/) 
-       * [Full mode](http://localhost/)  
+       * [Half mode](#half) 
+       * [Full mode](#full)  
     2. Directions      
-       * [Clock-Wise](http://localhost/)
-       * [Anti Cloc-Wise](http://localhost/)
+       * [Clock-Wise]
+       * [Anti Cloc-Wise]
     3. Speed      
-       * [Normal](http://localhost/)
-       * [Intermediate](http://localhost/)
-       * [Fast](http://localhost/)
+       * [Normal]
+       * [Intermediate]
+       * [Fast]
 <a name="desc"></a>
 ## Stepper motor working princible
  write the description here
+
+
+<a name="comp"></a>
+## Components
+ write the description here
+ 
+ <a name="code"></a>
+## Code Explanation
+ write the description here
+ 
+  <a name="half"></a>
+### Half Mode
+  
+  brief description
+  
+~~~markdown
+#### Half Clock-Wise
+
+code
+
+~~~
+ put the Gif
+ 
+ 
+  
+~~~markdown
+# Half Clock-Wise
+
+code
+
+~~~
+ put the Gif
+ 
