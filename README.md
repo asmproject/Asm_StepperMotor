@@ -7,12 +7,12 @@
        * [Half mode](#half) 
        * [Full mode](#full)  
     2. Directions      
-       * [Clock-Wise]
-       * [Anti Cloc-Wise]
+       * Clock-Wise
+       * Anti Cloc-Wise
     3. Speed      
-       * [Normal]
-       * [Intermediate]
-       * [Fast]
+       * Normal
+       * Intermediate
+       * Fast
 <a name="desc"></a>
 ## Stepper motor working princible
  write the description here
@@ -58,7 +58,7 @@ code
   brief description
   
 ~~~markdown
-#### FULL Clock-Wise
+# FULL Clock-Wise
 # fast speed
 code
 
@@ -70,7 +70,10 @@ code
 ~~~markdown
 # FULL Anti Clock-Wise
 # intermediate speed
-code
+```javascript
+  		code
+    
+    
 
 ~~~
  put the Gif
