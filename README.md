@@ -252,6 +252,7 @@ RET
 # fast speed
 
 ~~~
+![](GIFS/fullcwHigh.gif)
 
 ```javascript
 FULLCWP PROC
