@@ -35,9 +35,6 @@
 ~~~markdown
 # Half Clock-Wise
 # intermediate speed
-
-
-
 ~~~
  put the Gif
  
@@ -46,8 +43,6 @@
 ~~~markdown
 # Half Anti Clock-Wise
 # fast speed
-
-
 
 ~~~
  put the Gif
@@ -61,7 +56,6 @@
 ~~~markdown
 # FULL Clock-Wise
 # fast speed
-
 
 ~~~
  put the Gif
