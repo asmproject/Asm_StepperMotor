@@ -86,7 +86,7 @@
 > >        - PC3  =1    speed is intermediate.
 > >        - PC3  =1    speed is high.
 > >        - If  PC2  =0   &&  PC3  =0   &&  PC4  =0   
-> >          > Motor will stop.
+> >           - Motor will stop.
 
 >  - NORMP PROC
 >  - MIDP PROC
