@@ -289,9 +289,10 @@ RET
   
 ~~~markdown
 # FULL Anti Clock-Wise
-# intermediate speed
+# slow speed
 
 ~~~
+![](GIFS/fullAcwNorm.gif)
 
 ```javascript
 FULLACWP PROC
@@ -322,6 +323,5 @@ CALL DELAY ;DELAY
 RET
   FULLACWP ENDP
    ```
-   put the Gif
  
  
