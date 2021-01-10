@@ -118,7 +118,7 @@
  # intermediate speed
  
 ~~~
-![](GIFS/halfcwMid.gif)
+> ![](GIFS/halfcwMid.gif)
 
 ```javascript
 HALFCWP PROC
@@ -180,7 +180,7 @@ RET
 # fast speed
  
 ~~~
-![](GIFS/halfAcwHigh.gif)
+> ![](GIFS/halfAcwHigh.gif)
 
 ```javascript
 HALFACWP PROC
@@ -252,7 +252,7 @@ RET
 # fast speed
 
 ~~~
-![](GIFS/fullcwHigh.gif)
+> ![](GIFS/fullcwHigh.gif)
 
 ```javascript
 FULLCWP PROC
@@ -292,7 +292,7 @@ RET
 # slow speed
 
 ~~~
-![](GIFS/fullAcwNorm.gif)
+> ![](GIFS/fullAcwNorm.gif)
 
 ```javascript
 FULLACWP PROC
