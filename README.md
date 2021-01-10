@@ -119,6 +119,7 @@
  
 ~~~
 ![](GIFS/halfcwMid.gif)
+
 ```javascript
 HALFCWP PROC
 MOV AL, 00001000B  ;moves 08H to AL
@@ -173,15 +174,14 @@ RET
   HALFCWP ENDP
    ```
   
- put the Gif
- 
- 
   
 ~~~markdown
 # Half Anti Clock-Wise
 # fast speed
  
 ~~~
+![](GIFS/halfAcwHigh.gif)
+
 ```javascript
 HALFACWP PROC
 MOV AL, 00001001B      
@@ -236,7 +236,6 @@ RET
   HALFACWP ENDP
    ```
 
- put the Gif
 
  
   <a name="full"></a>
@@ -252,8 +251,8 @@ RET
 # FULL Clock-Wise
 # fast speed
 
-
 ~~~
+
 ```javascript
 FULLCWP PROC
 MOV AL, 00000110B
@@ -284,17 +283,15 @@ CALL DELAY ;DELAY
 RET
   FULLCWP ENDP
    ```
-   put the Gif
- 
- 
+   
+
   
 ~~~markdown
 # FULL Anti Clock-Wise
 # intermediate speed
 
-
-
 ~~~
+
 ```javascript
 FULLACWP PROC
 MOV AL, 000000011B
