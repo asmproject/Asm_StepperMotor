@@ -1,6 +1,6 @@
 # Stepper_Motor :cd:
 ##Table Of Contents
- * stepper motor with 8086 µp 
+ * [stepper motor with 8086 µp] (#desc)
  + Modes
      * Half mode 
      * Full mode  
