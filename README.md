@@ -70,6 +70,8 @@ code
 ~~~markdown
 # FULL Anti Clock-Wise
 # intermediate speed
+
+~~~
 ```javascript
 function test(){
 	console.log("Hello world!");
@@ -100,6 +102,5 @@ function test(){
 		}
     };
     
-~~~
  put the Gif
  
