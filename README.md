@@ -145,7 +145,8 @@ HALFACW PROC
 >  - The motor rotates a full revolution in 4 steps ,each step is a 90o  step angle , In this mode two coils are energized - logic 1 is given to two coils - at a time 
 > ### This table shows the logic of programming stepper motor in full mode in clock wise direction where A,B,C and D are the coils of the motor.
 >  - To rotate the motor in anti-clock wise just reverse the logic from bottom to top
-# table image
+
+> ![](GIFS/full%20table.PNG)
 
   
 ~~~markdown
