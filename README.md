@@ -254,8 +254,34 @@ RET
 
 ~~~
 ```javascript
-FULLCW PROC
-  FULLCW ENDP
+FULLCWP PROC
+MOV AL, 00000110B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY 
+;--------------------
+  MOV AL, 00001100B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00001001B
+  OUT PORTA,AL
+;--------------------
+  CALL PRESS
+ CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00000011B
+  OUT PORTA,AL
+;--------------------
+CALL PRESS
+CALL DELAY ;DELAY 
+;-----------------
+
+RET
+  FULLCWP ENDP
    ```
    put the Gif
  
@@ -269,8 +295,33 @@ FULLCW PROC
 
 ~~~
 ```javascript
-FULLACW PROC
-  FULLACW ENDP
+FULLACWP PROC
+MOV AL, 000000011B
+  OUT PORTA,AL
+;--------------------
+CALL PRESS
+CALL DELAY ;DELAY 
+;--------------------
+  MOV AL, 00001001B
+  OUT PORTA,AL
+;--------------------
+CALL PRESS
+CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00001100B
+  OUT PORTA,AL
+;--------------------
+CALL PRESS
+ CALL DELAY ;DELAY 
+;--------------------    
+  MOV AL, 00000110B
+  OUT PORTA,AL
+;--------------------
+CALL PRESS
+CALL DELAY ;DELAY 
+;-----------------
+RET
+  FULLACWP ENDP
    ```
    put the Gif
  
