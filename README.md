@@ -16,34 +16,23 @@
        
 <a name="desc"></a>
 ## Stepper motor working princible
-> # this project explains how to control -5 leads unipolar- stepper motor using 8086 micro processor This project is programmed in assembly language, and designed using protous 8.6
-# we start with controlling the mode of the motor:
-# stepper motor works in 3 different modes ,we will cover only two of them :
-  - full mode
-  - half mode
-# stepper motor rotates in two direction:
-  - anti clockwise
-  - clockwise
-# stepper motor works in different speeds: 
-  - low speed
-  - midium speed 
-  - high speed
-  
-  # to control the speed:
-
-# we used  3 buttons..
- - the 1st btn makes the motor rotates with an normal speed
- - the 2nd btn makes the motor rotates with an intermediate speed
- - the 3rd btn makes the motor rotates with high speed
-> 
-> 
-> 
-> 
-> 
-> 
->    
-
-
+> - this project explains how to control -5 leads unipolar- stepper motor using 8086 micro processor This project is programmed in assembly language, and designed using protous 8.6
+> - we start with controlling the mode of the motor:
+> ### stepper motor works in 3 different modes ,we will cover only two of them :
+>       - full mode
+>       - half mode
+> ### stepper motor rotates in two direction:
+>      - anti clockwise
+>      - clockwise
+> ### stepper motor works in different speeds: 
+>      - normal speed
+>      - midium speed 
+>      - high speed
+> ### to control the speed:
+> - we used  3 buttons..
+>    - the 1st btn makes the motor rotates with an normal speed
+>    - the 2nd btn makes the motor rotates with an intermediate speed
+>    - the 3rd btn makes the motor rotates with high speed
 <a name="comp"></a>
 ## Components
 > ### Circuit Design
