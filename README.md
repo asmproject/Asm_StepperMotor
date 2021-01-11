@@ -51,7 +51,7 @@
   > > -  There are different modes ,we use mode 0.
   > > -  So,let D6=0 , D5=0 ,D2=0.
  >  > -  To use as i/o mode ,let D7=1.
-> > ![](GIFS/control register.PNG)
+> > ![](GIFS/control%20register.PNG)
 > > - Control register (CR)= D7 D6 D5 D4 D3 D2 D1D0
 > > - In our code use :
 > >      - portA o/p
