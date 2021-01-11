@@ -55,9 +55,9 @@
 > > - Control register (CR)= D7 D6 D5 D4 D3 D2 D1D0
 > > - In our code use :
 > >      - portA o/p
-> >      - PORTB
+> >      - PORTB not using
 > >      - PORTC I/P
-> > - So,CR=10000001
+> > - So,CR=1000 1011
 
 > ### 4- motor driver:  ULN2003A   
 > > is a type of motor driver used to amplify the current produced by our circuit to suit the current needed by the stepper 
