@@ -39,6 +39,8 @@
 > 
 > ![](GIFS/circuitDiagram.PNG)
 > ### 1- 8086 µp
+> > is a 16-bit microprcessor chip designed by intel, has 20-bit address bus and 16 bit data bus ,16-bit of the address bus are multiplexed with the 16-bit data bus in AD0:AD15 and a separated 4 bits for address bus A16:A19 it  supports 64k I/O pots and provides 16-bit regs (ax,bx,...), it operates in 2   modes (max and min).it prefetches up to 6 inst bytes from memo and queue them to speed up  instruction execution
+>
 > > so after all 8086 µp is only the CPU of our program -processes and  executes our assembly code- so it needs to be connected to a 
 > > storage device and an I/O device, here comes the rule of …
 > ### 2- latch : 74HC373 
