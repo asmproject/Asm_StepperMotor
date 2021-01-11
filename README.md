@@ -121,8 +121,8 @@
 
   
 ~~~markdown
- # Half Clock-Wise
- # intermediate speed
+# Half Clock-Wise
+# Intermediate speed
  
 ~~~
 > ![](GIFS/halfcwMid.gif)
